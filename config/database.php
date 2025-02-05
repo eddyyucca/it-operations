@@ -15,8 +15,7 @@ return [
     | is explicitly specified when you execute a query / statement.
     |
     */
-
-    'default' => env('DB_CONNECTION', 'null'),
+'default' => env('DB_CONNECTION', 'mongodb'),
 
 
     /*
@@ -113,7 +112,15 @@ return [
             // 'trust_server_certificate' => env('DB_TRUST_SERVER_CERTIFICATE', 'false'),
         ],
 
+    'mongodb' => [
+        'driver' => 'mongodb',
+        'host' => env('DB_HOST', '127.0.0.1'),
+        'port' => env('DB_PORT', 27017),
+        'database' => env('DB_DATABASE', 'asset_operations'),
+        'username' => env('DB_USERNAME', ''),
+        'password' => env('DB_PASSWORD', ''),
     ],
+],
 
     /*
     |--------------------------------------------------------------------------
